@@ -1,6 +1,6 @@
 # Umbraco Vorto Grid Rich Text Editor
 
-An Umbraco plugin replacement for the Umbraco Grid TinyMCE Rich Text Editor to resolve the issue with TinyMCE not re-initialising when you swich languages in the wonderful Vorto plugin.
+An Umbraco plugin replacement for the Umbraco Grid TinyMCE Rich Text Editor to resolve the issue with the grid based TinyMCE not re-initialising when you swich languages in the wonderful Vorto plugin.
 
 This is designed for the situation where you have Vorto wrapping the standard Umbraco Grid.
 
