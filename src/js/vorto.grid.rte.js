@@ -23,8 +23,6 @@ angular.module("umbraco.directives")
                     //we always fetch the default one, and then override parts with our own
                     tinyMceService.configuration().then(function (tinyMceConfig) {
 
-                        console.log("re-init");
-
                         //config value from general tinymce.config file
                         var validElements = tinyMceConfig.validElements;
                         var fallbackStyles = [{ title: "Page header", block: "h2" }, { title: "Section header", block: "h3" }, { title: "Paragraph header", block: "h4" }, { title: "Normal", block: "p" }, { title: "Quote", block: "blockquote" }, { title: "Code", block: "code" }];
@@ -306,7 +304,10 @@ angular.module("umbraco.directives")
                             var unsubscribe = scope.$on("formSubmitting", function () {
                                 //TODO: Here we should parse out the macro rendered content so we can save on a lot of bytes in data xfer
                                 // we do parse it out on the server side but would be nice to do that on the client side before as well.
-                                scope.value = tinyMceEditor.getContent();
+                                if(tinyMceEditor)
+                                {
+                                    scope.value = tinyMceEditor.getContent();
+                                }
                             });
 
                             //when the element is disposed we need to unsubscribe!
